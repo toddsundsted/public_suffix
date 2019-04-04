@@ -1,0 +1,13 @@
+name: public_suffix
+version: 0.1.0
+
+description: |
+  A small Crystal library designed to make the Public Suffix List
+  (https://publicsuffix.org/) easier to use.
+
+authors:
+  - Todd Sundsted
+
+crystal: 0.27.2
+
+license: MIT
