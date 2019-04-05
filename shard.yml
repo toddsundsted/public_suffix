@@ -1,5 +1,5 @@
 name: public_suffix
-version: 0.1.0
+version: 0.1.1
 
 description: |
   A small Crystal library designed to make the Public Suffix List
