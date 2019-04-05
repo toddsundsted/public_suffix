@@ -37,7 +37,7 @@ class PublicSuffix
     def self.parse(rules : Enumerable(String))
       return Term{:term => false} if rules.empty?
       rules.reduce(Term.new) do |acc, rule|
-        rule.strip
+        rule = rule.gsub(/\s.*/, "")
         unless rule.starts_with?("//") || rule.empty?
           tmp = acc
           rule.split(".").reverse.each do |p|
