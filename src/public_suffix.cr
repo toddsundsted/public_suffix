@@ -41,7 +41,7 @@ class PublicSuffix
   end
 
   # Returns a list of possible matches for the domain name.
-  private def match(domain, rules)
+  private def match(domain, rules, wildcard = false)
     set = [] of Array(String)
     return set if domain.empty? || rules.empty?
     domain = domain.dup
@@ -49,6 +49,7 @@ class PublicSuffix
     [[first.downcase, first], ["!#{first.downcase}", "!#{first}"], ["*", first]].each do |(pattern, name)|
       if rules.has_key?(pattern)
         unless (temp = rules[pattern]).is_a?(Bool)
+          wildcard = false
           set << [name] if temp[:term]?
           match(domain, temp).each do |result|
             set << [first] + result
@@ -56,15 +57,24 @@ class PublicSuffix
         end
       end
     end
+    if wildcard
+      set << [first]
+    end
     set
   end
 
   # Returns the best match from the possible matches.
   private def best(results)
     return [] of String if results.empty?
-    result = results.find { |r| r.last[0] == '!' } || results.sort_by(&.size).last
-    result = result[0..result.size - 2] if result.last[0] == '!'
+    result = results.find { |r| r.last[0]? == '!' } || results.sort_by(&.size).last
+    result = result[0..result.size - 2] if result.last[0]? == '!'
     result
+  end
+
+  # Takes the specified number off the list. Returns an empty list if
+  # the specified number aren't available.
+  def take(domain, n = 1)
+    domain.size >= n ? domain.pop(n) : [] of String
   end
 
   # Splits the domain name into a three-element list consisting of
@@ -74,8 +84,9 @@ class PublicSuffix
   #
   def split(domain)
     domain = domain.split(".")
-    result = best(match(domain, rules))
-    [domain.pop(result.size), domain.pop(1), domain].map(&.join(".")).reverse
+    result = best(match(domain, rules, true))
+    return ["", "", ""] if result.empty?
+    [take(domain, result.size), take(domain), domain].map(&.join(".")).reverse
   end
 
   # Returns the top-level domain name:
@@ -83,8 +94,9 @@ class PublicSuffix
   #
   def tld(domain)
     domain = domain.split(".")
-    result = best(match(domain, rules))
-    domain.pop(result.size).join(".")
+    result = best(match(domain, rules, true))
+    return "" if result.empty?
+    take(domain, result.size).join(".")
   end
 
   # Returns the full canonical domain name:
@@ -92,8 +104,9 @@ class PublicSuffix
   #
   def cdn(domain)
     domain = domain.split(".")
-    result = best(match(domain, rules))
-    domain.pop(result.size + 1).join(".")
+    result = best(match(domain, rules, true))
+    return "" if result.empty?
+    take(domain, result.size + 1).join(".")
   end
 end
 

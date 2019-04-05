@@ -16,6 +16,24 @@ describe PublicSuffix do
 
   public_suffix = PublicSuffix.new(url: "file://#{__DIR__}/test.dat", cache_expiry_period: -1)
 
+  it "should match * if no rules match" do
+    public_suffix.split("www.home.foobar").should eq(["www", "home", "foobar"])
+    public_suffix.cdn("www.home.foobar").should eq("home.foobar")
+    public_suffix.tld("www.home.foobar").should eq("foobar")
+    public_suffix.split("foobar").should eq(["", "", "foobar"])
+    public_suffix.cdn("foobar").should eq("")
+    public_suffix.tld("foobar").should eq("foobar")
+  end
+
+  it "should handle domains with wildcards" do
+    public_suffix.split("mm").should eq(["", "", ""])
+    public_suffix.cdn("mm").should eq("")
+    public_suffix.tld("mm").should eq("")
+    public_suffix.split("c.mm").should eq(["", "", "c.mm"])
+    public_suffix.cdn("c.mm").should eq("")
+    public_suffix.tld("c.mm").should eq("c.mm")
+   end
+
   it "should be case insensitive" do
     public_suffix.split("fee.fi.fo.com").should eq(["fee.fi", "fo", "com"])
     public_suffix.cdn("fee.fi.fo.com").should eq("fo.com")
