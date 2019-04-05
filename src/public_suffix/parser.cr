@@ -40,7 +40,7 @@ class PublicSuffix
         rule = rule.gsub(/\s.*/, "")
         unless rule.starts_with?("//") || rule.empty?
           tmp = acc
-          rule.split(".").reverse.each do |p|
+          rule.split(".").reject(&.empty?).reverse.each do |p|
             if tmp.is_a?(Term)
               tmp[p] = Term.new unless tmp.has_key?(p)
               tmp = tmp[p]
