@@ -5,3 +5,13 @@ crystal:
 
 script:
   - crystal spec
+  - crystal docs
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  project_name: toddsundsted/public_suffix
+  on:
+    branch: master
+  local_dir: docs
