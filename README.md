@@ -1,5 +1,9 @@
 # public_suffix
 
+[![GitHub Release](https://img.shields.io/github/release/toddsundsted/public_suffix.svg)](https://github.com/toddsundsted/public_suffix/releases)
+[![Build Status](https://travis-ci.org/toddsundsted/public_suffix.svg?branch=master)](https://travis-ci.org/toddsundsted/public_suffix)
+[![Documentation](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://toddsundsted.github.io/public_suffix/)
+
 The [Public Suffix List](https://publicsuffix.org/) is "a cross-vendor
 initiative to provide an accurate list of domain name suffixes". Such
 a list is necessary because "there was and remains no algorithmic
