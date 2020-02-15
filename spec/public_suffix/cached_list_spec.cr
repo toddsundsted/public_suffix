@@ -18,7 +18,7 @@ describe PublicSuffix::CachedList do
       config = PublicSuffix::Config.new(url: "file:///nowhere/#{File.basename(file.path)}")
       cached_list = PublicSuffix::CachedList.new(config)
       cached_list.expired?.should be_false
-      File.touch(file.path, time: Time.now - 1.year)
+      File.touch(file.path, time: Time.local - 1.year)
       cached_list.expired?.should be_true
     ensure
       file.delete if file
@@ -29,7 +29,7 @@ describe PublicSuffix::CachedList do
       config = PublicSuffix::Config.new(url: "file:///nowhere/#{File.basename(file.path)}", cache_expiry_period: -1)
       cached_list = PublicSuffix::CachedList.new(config)
       cached_list.expired?.should be_true
-      File.touch(file.path, time: Time.now - 1.year)
+      File.touch(file.path, time: Time.local - 1.year)
       cached_list.expired?.should be_true
     ensure
       file.delete if file
@@ -40,7 +40,7 @@ describe PublicSuffix::CachedList do
       config = PublicSuffix::Config.new(url: "file:///nowhere/#{File.basename(file.path)}", cache_expiry_period: 0)
       cached_list = PublicSuffix::CachedList.new(config)
       cached_list.expired?.should be_false
-      File.touch(file.path, time: Time.now - 1.year)
+      File.touch(file.path, time: Time.local - 1.year)
       cached_list.expired?.should be_false
     ensure
       file.delete if file

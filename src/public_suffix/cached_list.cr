@@ -36,7 +36,7 @@ class PublicSuffix
     end
 
     # Returns true if the cached file has expired.
-    def expired?(now = Time.now)
+    def expired?(now = Time.local)
       if @config.cache_expiry_period > 0
         File.info(file).modification_time + @config.cache_expiry_period.seconds < now
       elsif @config.cache_expiry_period < 0
