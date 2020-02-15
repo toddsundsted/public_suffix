@@ -1,5 +1,5 @@
 name: public_suffix
-version: 0.1.1
+version: 0.1.2
 
 description: |
   A small Crystal library designed to make the Public Suffix List
@@ -8,6 +8,6 @@ description: |
 authors:
   - Todd Sundsted
 
-crystal: 0.27.2
+crystal: 0.28.0
 
 license: MIT
