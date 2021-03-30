@@ -10,7 +10,7 @@ describe PublicSuffix do
   ensure
     if dir
       File.delete(File.join(dir, "public_suffix_list.dat"))
-      Dir.rmdir(dir)
+      Dir.delete(dir)
     end
   end
 
