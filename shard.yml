@@ -8,6 +8,6 @@ description: |
 authors:
   - Todd Sundsted
 
-crystal: 0.35.1
+crystal: ">= 0.35.1, < 2.0.0"
 
 license: MIT
