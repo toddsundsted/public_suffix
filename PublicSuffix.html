@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="0.1.3">
+<meta name="crystal_docs.project_name" content="public_suffix">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="public_suffix">
+  <title>PublicSuffix - public_suffix 0.1.3</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          public_suffix
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.3
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="public_suffix/PublicSuffix" data-name="publicsuffix">
+      <a href="PublicSuffix.html">PublicSuffix</a>
+      
+        <ul>
+  
+  <li class=" " data-id="public_suffix/PublicSuffix/CachedList" data-name="publicsuffix::cachedlist">
+      <a href="PublicSuffix/CachedList.html">CachedList</a>
+      
+    </li>
+  
+  <li class="parent " data-id="public_suffix/PublicSuffix/Parser" data-name="publicsuffix::parser">
+      <a href="PublicSuffix/Parser.html">Parser</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="public_suffix/PublicSuffix/Parser/Term" data-name="publicsuffix::parser::term">
+      <a href="PublicSuffix/Parser/Term.html">Term</a>
+      
+        <ul>
+  
+  <li class=" " data-id="public_suffix/PublicSuffix/Parser/Term/Type" data-name="publicsuffix::parser::term::type">
+      <a href="PublicSuffix/Parser/Term/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> PublicSuffix
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="PublicSuffix.html">PublicSuffix</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>The <a href="https://publicsuffix.org/">Public Suffix List</a> library.</p>
+
+<p>The Public Suffix List is "a cross-vendor initiative to provide an
+accurate list of domain name suffixes". Such a list is necessary
+because "there was and remains no algorithmic method of finding the
+highest level at which a domain may be registered for a particular
+top-level domain...".</p>
+
+<p><code>public_suffix</code> is a small Crystal library designed to make the
+Public Suffix List easier to use. The library will transparently
+download the latest list of rules, parse the rules, and optionally
+cache them. Source URL, cache directory, and cache expiry are all
+configurable.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/toddsundsted/public_suffix/blob/v0.1.3/src/public_suffix.cr#L15" target="_blank">
+        public_suffix.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/toddsundsted/public_suffix/blob/v0.1.3/src/public_suffix/cached_list.cr#L4" target="_blank">
+        public_suffix/cached_list.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/toddsundsted/public_suffix/blob/v0.1.3/src/public_suffix/parser.cr#L1" target="_blank">
+        public_suffix/parser.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.1&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(**kwargs)-class-method" class="signature"><strong>.new</strong>(**kwargs)</a>
+        
+          <div class="summary"><p>Creates a new <code><a href="PublicSuffix.html">PublicSuffix</a></code> instance.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#cdn(domain)-instance-method" class="signature"><strong>#cdn</strong>(domain)</a>
+        
+          <div class="summary"><p>Returns the full canonical domain name:     cdn("www.city.kawasaki.jp") # => "city.kawasaki.jp" </p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#split(domain)-instance-method" class="signature"><strong>#split</strong>(domain)</a>
+        
+          <div class="summary"><p>Splits the domain name into a three-element list consisting of (from right to left) the top-level domain name, the canonical name, and everything else:     split("www.city.kawasaki.jp") # => ["www", "city", "kawasaki.jp"] </p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#take(domain,n=1)-instance-method" class="signature"><strong>#take</strong>(domain, n = <span class="n">1</span>)</a>
+        
+          <div class="summary"><p>Takes the specified number off the list.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tld(domain)-instance-method" class="signature"><strong>#tld</strong>(domain)</a>
+        
+          <div class="summary"><p>Returns the top-level domain name:     tld("www.city.kawasaki.jp") # => "kawasaki.jp" </p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(**kwargs)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(**kwargs)
+
+        <a class="method-permalink" href="#new(**kwargs)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a new <code><a href="PublicSuffix.html">PublicSuffix</a></code> instance. By default, it fetches and
+caches the official list of rules. Specify the cache directory
+with <em>cache_dir</em> (the default is the system temp directory) and
+the cache expiry with <em>cache_expiry_period</em> in seconds (the
+default it 30 days). An expiry of <code>0</code> means cache indefinitely; a
+negative value means do not cache. Download rules from another
+source by specifying the <em>url</em>.</p>
+
+<pre><code class="language-crystal"><span class="t">PublicSuffix</span>.<span class="k">new</span>(cache_dir: <span class="s">&quot;/tmp&quot;</span>, cache_expiry_period: <span class="n">3600</span>, url: <span class="s">&quot;file:///var/data/test.dat&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/toddsundsted/public_suffix/blob/v0.1.3/src/public_suffix.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="cdn(domain)-instance-method">
+      <div class="signature">
+        
+        def <strong>cdn</strong>(domain)
+
+        <a class="method-permalink" href="#cdn(domain)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the full canonical domain name:</p>
+
+<pre><code class="language-crystal">cdn(<span class="s">&quot;www.city.kawasaki.jp&quot;</span>) <span class="c"># =&gt; &quot;city.kawasaki.jp&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/toddsundsted/public_suffix/blob/v0.1.3/src/public_suffix.cr#L105" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="split(domain)-instance-method">
+      <div class="signature">
+        
+        def <strong>split</strong>(domain)
+
+        <a class="method-permalink" href="#split(domain)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Splits the domain name into a three-element list consisting of
+(from right to left) the top-level domain name, the canonical
+name, and everything else:</p>
+
+<pre><code class="language-crystal">split(<span class="s">&quot;www.city.kawasaki.jp&quot;</span>) <span class="c"># =&gt; [&quot;www&quot;, &quot;city&quot;, &quot;kawasaki.jp&quot;]</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/toddsundsted/public_suffix/blob/v0.1.3/src/public_suffix.cr#L85" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="take(domain,n=1)-instance-method">
+      <div class="signature">
+        
+        def <strong>take</strong>(domain, n = <span class="n">1</span>)
+
+        <a class="method-permalink" href="#take(domain,n=1)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Takes the specified number off the list. Returns an empty list if
+the specified number aren't available.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/toddsundsted/public_suffix/blob/v0.1.3/src/public_suffix.cr#L76" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tld(domain)-instance-method">
+      <div class="signature">
+        
+        def <strong>tld</strong>(domain)
+
+        <a class="method-permalink" href="#tld(domain)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the top-level domain name:</p>
+
+<pre><code class="language-crystal">tld(<span class="s">&quot;www.city.kawasaki.jp&quot;</span>) <span class="c"># =&gt; &quot;kawasaki.jp&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/toddsundsted/public_suffix/blob/v0.1.3/src/public_suffix.cr#L95" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
